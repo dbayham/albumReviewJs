@@ -1,0 +1,54 @@
+### Get all albums
+GET http://localhost:8080/api/albums
+Accept: application/json
+
+### Get an album by given id.
+GET http://localhost:8080/api/albums/1
+
+### Delete an album with the given id.
+DELETE http://localhost:8080/api/albums/1
+
+### Post a new album resource. 
+POST http://localhost:8080/api/albums
+Content-Type: application/json
+
+{"title":"NewAlbum177772","recordLabel": "NewRL Records", "rating": 5, "imageUrl": "google.com", "artist": "Dustin"}
+
+### Update an album resource. 
+PUT http://localhost:8080/api/albums
+Content-Type: application/json
+
+{"id":1,"title":"It's Soup","recordLabel": "Cool Boyz Inc","rating": 8, "imageUrl": "google.com", "artist": "Dustin","songs": [{"title": "it's a song"}],"comments": ["comment1", "comment2"]}
+
+### Update an album's rating property
+PUT http://localhost:8080/api/albums/1/rating
+Content-Type: application/json
+
+9.0
+
+### Add a new song to the album's songs.
+PATCH http://localhost:8080/api/albums/1/songs
+Content-Type: application/json
+
+{"title": "Hey", "artist": "Pixies", "duration": 210, "rating": 7.5, "linkURL": "spotify.com", "comments": ["it's a song","yes indeedy"]}
+
+### Delete a song with id from album.
+DELETE http://localhost:8080/api/albums/1/songs/5
+
+### Add a new comment to the album
+PATCH  http://localhost:8080/api/albums/1/comments
+# Content-Type: application/json
+
+This album is pretty good!
+
+### Add a new comment to a song
+PATCH  http://localhost:8080/api/albums/1/songs/2/comments
+Content-Type: application/json
+
+"This song is friggin' trash, dude"
+
+### Change a rating to an song
+PUT http://localhost:8080/api/albums/1/songs/2/rating
+Content-Type: application/json
+
+7
