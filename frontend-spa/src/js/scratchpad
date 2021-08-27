@@ -1,0 +1,4 @@
+   const albumDot = document.createElement("input");
+    albumDot.type = "radio";
+    albumDot.name = "position";
+    albumDot.firstChild.setAttribute("checked");
